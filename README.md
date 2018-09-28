@@ -48,9 +48,9 @@ mvn clean package -Dmaven.test.skip=true && java -Duser.timezone=UTC -Duser.coun
 
 ## Estratégia
 
-Foi desenvolvida uma aplicação RESTFul (API), que por sua vez tem como base a arquitetura REST. Para tal foi utilizado Spring MVC, e Spring Data JPA com Hibernate para persistência de dados. Os dados são armazenados no banco relacional PostgreSQL.
-```  
+Foi desenvolvida uma aplicação RESTFul (API), que por sua vez tem como base a arquitetura REST. Para tal foi utilizado Spring MVC, e Spring Data JPA com Hibernate para persistência de dados. Os dados são armazenados no banco relacional PostgreSQL. 
+
 Como estratégia para uma configuração inicial eficiente e ágil, foi utilizado o Spring Boot com as dependências necessárias para o melhor desenvolvimento da API.
-```
+
 Foram desenvolvidos testes tanto dos serviços da interface quanto da camada Controller. Além disso é possível consumir/testar a API através do Swagger (que também é uma documentação).
 
