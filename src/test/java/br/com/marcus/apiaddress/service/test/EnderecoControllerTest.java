@@ -74,7 +74,7 @@ public class EnderecoControllerTest {
 	}
 	
 	@Test
-	public void insertNewEndereco() throws Exception {
+	public void createNewEndereco() throws Exception {
 		// when
 		MockHttpServletResponse response = mvc
 				.perform(post("/enderecos/").contentType(MediaType.APPLICATION_JSON).content(
@@ -86,7 +86,7 @@ public class EnderecoControllerTest {
 	}
 	
 	@Test
-	public void insertNewEnderecoWithoutARequiredField() throws Exception {
+	public void createNewEnderecoWithoutARequiredField() throws Exception {
 		//given
 		Endereco endereco = new Endereco("Rua Marte", 429, "06414-000", "Barueri", "SP");
 		endereco.setCidade(null);
@@ -98,7 +98,7 @@ public class EnderecoControllerTest {
 				.andReturn().getResponse();
 
 		// then
-		assertThat(response.getStatus()).isEqualTo(HttpStatus.FORBIDDEN.value());
+		assertThat(response.getStatus()).isEqualTo(HttpStatus.BAD_REQUEST.value());
 		assertThat(response.getContentAsString().trim()).isEqualTo("Favor preencher o campo CIDADE.");
 	}
 	

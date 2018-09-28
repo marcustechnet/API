@@ -27,7 +27,7 @@ public class EnderecoController {
 	private EnderecoService enderecoService;
 
 	@PostMapping("/")
-	public ResponseEntity<?> insertEndereco(@Valid @RequestBody Endereco endereco) {
+	public ResponseEntity<?> createEndereco(@Valid @RequestBody Endereco endereco) {
 
 		endereco.setId(null);
 		String msgError = enderecoValidation(endereco);
@@ -36,7 +36,7 @@ public class EnderecoController {
 			endereco = enderecoService.saveEndereco(endereco);
 			return new ResponseEntity<String>("Endereço incluído com Sucesso!", HttpStatus.CREATED);
 		} else {
-			return new ResponseEntity<String>(msgError, HttpStatus.FORBIDDEN);
+			return new ResponseEntity<String>(msgError, HttpStatus.BAD_REQUEST);
 		}
 
 	}
@@ -60,7 +60,7 @@ public class EnderecoController {
 			return new ResponseEntity<String>("Endereço inexistente!!", HttpStatus.NOT_FOUND);
 		}
 
-		return new ResponseEntity<String>(msgError, HttpStatus.FORBIDDEN);
+		return new ResponseEntity<String>(msgError, HttpStatus.BAD_REQUEST);
 	}
 
 	@GetMapping(value = "/")
