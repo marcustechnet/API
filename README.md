@@ -11,7 +11,7 @@ PostgreSQL
 ## API Documentation
 http://localhost:8083/swagger-ui.html
 
-## Postgres scripts
+## PostgreSQL scripts
 
 **creating base**
 ```
