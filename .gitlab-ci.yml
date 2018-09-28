@@ -1,0 +1,5 @@
+maven_build:
+    stage: test
+    tags: 
+      - q4mBtYjjkkHZenXzoWZu
+    script: mvn package -Dmaven.test.skip=true
